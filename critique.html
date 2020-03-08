@@ -1,233 +1,540 @@
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-La critique littéraire vise à <b>relever les qualités et les défauts</b> d’un livre.
-Faire une critique, c’est <b>justifier de manière convaincante et personnelle son opinion</b>. C’est aussi un moyen de <b>partager son avis</b> avec d’autres.
-	<br /> <br />
-En t'identifiant, via PCN, tu peux poster tes critiques sur les livres du CDI !
-	<br /><br />
-<h3><b><u>I - Présentation du livre</u></b></h3>
-<br />
-<form name="titre">
-	<b>Quel est le titre du livre ?</b>&nbsp;
-	<input size="35" value="Titre du livre" id="txt_titre" type="text" /><br /><br>
-	<b>Qui est l'auteur du livre ?</b>&nbsp;
-	<input size="35" value="Nom de l'auteur" id="txt_auteur" type="text" />
-	<br /><br />
-  </form>
-  
-<form name="livre">
-	<b>De quel type de livre s'agit-il ?</b><br />
-	<input type="radio" name="livre" value="un album" />album    
-	<input type="radio" name="livre" value="une bande-dessinée" />bandes-dessinées    
-    <input type="radio" name="livre" value="un conte" />conte    
-	<input type="radio" name="livre" value="un manga" />manga    
-	<input type="radio" name="livre" value="une pièce de théâtre" />théâtre<br />
-	<input type="radio" name="livre" value="un recueil de poésie" />recueil de poésie    
-    <input type="radio" name="livre" value="un roman" />roman
-	<br /><br />
-  </form>
-  
-<form name="genre">
-	<b>Quel est le genre de fiction ?</b><br />
-	<input type="radio" name="genre" value="animalier" />animalier    
-	<input type="radio" name="genre" value="d'amour" />amour    
-    <input type="radio" name="genre" value="d'aventure" />aventure    
-	<input type="radio" name="genre" value="biographique" />biographique    
-	<input type="radio" name="genre" value="fantastique" />fantastique<br />
-	<input type="radio" name="genre" value="historique" />historique    
-    <input type="radio" name="genre" value="d'horreur" />horreur    
-	<input type="radio" name="genre" value="humoristique" />humoristique    
-	<input type="radio" name="genre" value="merveilleux" />merveilleux    
-	<input type="radio" name="genre" value="policier" />policier<br />
-    <input type="radio" name="genre" value="de science-fiction" />science-fiction    
-	<input type="radio" name="genre" value="de société" />société<br />
-	<input type="radio" name="genre" value="[précisions sur le genre de l'histoire]" />autre [à préciser dans la critique]
-	<br /><br />
-</form>
-<form name="theme">
-<b>Quel est le thème principal du livre ?</b><br />
-	<input type="radio" name="theme" value="d'amitié" />l'amitié    
-	<input type="radio" name="theme" value="d'amour" />l'amour    
-    <input type="radio" name="theme" value="des différences" />les différences    
-	<input type="radio" name="theme" value="d'écologie" />l'écologie    
-	<input type="radio" name="theme" value="d'exil" />l'exil<br />
-    <input type="radio" name="theme" value="de la famille" />la famille    
-	<input type="radio" name="theme" value="de la guerre" />la guerre    
-	<input type="radio" name="theme" value="de harcèlement" />le harcèlement    
-	<input type="radio" name="theme" value="de la maladie" />la maladie<br />
-	<input type="radio" name="theme" value="de mensonge" />le mensonge    
-    <input type="radio" name="theme" value="de secret" />les secrets    
-	<input type="radio" name="theme" value="de sport" />le sport    
-	<input type="radio" name="theme" value="de voyages" />les voyages<br />
-	<input type="radio" name="theme" value="[précisions sur le thème du livre]" />autre [à préciser dans la critique]
-	<br /><br />
-</form>
-<form name="resume">
-<b>Résume l'histoire en une ou deux phrases.</b><br />
-<small><i>Pense à répondre aux questions QUI?, QUOI?, POURQUOI?, QUAND et OÙ?, quand c'est précisé dans l'histoire.</i></small><br />
-	<textarea cols="65" rows="2" id="txt_resume"></textarea>
-	<br /><br />
- </form>
- 
-	<br />
-<h3><b><u>II - Avis argumenté</u></b></h3>
-<br />
- 
- <form name="emotion">
-<b>Qu'as-tu ressenti à la lecture ?</b><br />
-    <input type="radio" name="emotion" value="effrayante" />de la peur    
-	<input type="radio" name="emotion" value="joyeuse" />de la joie    
-    <input type="radio" name="emotion" value="enrageante" />de la colère    
-	<input type="radio" name="emotion" value="triste" />de la tristesse    
-	<br /><br />
-</form>
-<form name="justifemo">
-<b>Pourquoi as-tu ressenti cette émotion ?</b><br />
-<small><i>Continue la phrase : car... <br /></i></small><br />
-	<textarea cols="65" rows="2" id="txt_justifemo">car </textarea>
-	<br /><br />
- </form>
- 
- <form name="avis">
-	<b>Quel est ton avis sur ce livre ?</b><br />
-	<input type="radio" name="avis" value="J'ai détesté" />★☆☆☆☆    
-	<input type="radio" name="avis" value="Je n'ai pas aimé" />★★☆☆☆    
-    <input type="radio" name="avis" value="J'ai aimé" />★★★☆☆    
-	<input type="radio" name="avis" value="J'ai beaucoup aimé" />★★★★☆    
-	<input type="radio" name="avis" value="J'ai adoré" />★★★★★    
-	<br /><br />
-</form>
-<form name="histoire">
-	<b>Comment peux-tu qualifier l'histoire ?</b><br />
-	<input type="radio" name="histoire" value="pleine d'actions" />pleine d'actions    
-	<input type="radio" name="histoire" value="captivante" />captivante    
-	<input type="radio" name="histoire" value="confuse" />confuse (difficile à comprendre)<br />
-	<input type="radio" name="histoire" value="dépaysante" />dépaysante    
-	<input type="radio" name="histoire" value="drôle" />drôle    
-    <input type="radio" name="histoire" value="émouvante" />émouvante    
-	<input type="radio" name="histoire" value="ennuyeuse" />ennuyeuse    
-	<input type="radio" name="histoire" value="instructive" />instructive<br />
-	<input type="radio" name="histoire" value="intrigante" />intrigante    
-	<input type="radio" name="histoire" value="originale" />originale    
-	<input type="radio" name="histoire" value="pathétique" />pathétique    
-    <input type="radio" name="histoire" value="poétique" />poétique    
-    <input type="radio" name="histoire" value="réaliste" />réaliste<br />
-	<input type="radio" name="histoire" value="révoltante" />révoltante    
-	<input type="radio" name="histoire" value="surprenante" />surprenante    
-	<input type="radio" name="histoire" value="pleine de suspense" />pleine de suspense<br />
-	<input type="radio" name="histoire" value="[précisions sur la façon dont tu qualifierais l'histoire]" />autre [à préciser dans la critique]
-	<br /><br />
-  </form>
-  
-<form name="ecriture">
-<b>Que penses-tu de la façon dont est écrite l'histoire ?</b><br />
-	<input type="radio" name="ecriture" value="court" />peu de pages    
-	<input type="radio" name="ecriture" value="aux nombreuses pages" />beaucoup de pages    
-    <input type="radio" name="ecriture" value="au vocabulaire difficile à comprendre" />vocabulaire compliqué<br />
-	<input type="radio" name="ecriture" value="facile à comprendre" />facile à comprendre    
-	<input type="radio" name="ecriture" value="bien écrit" />bien écrite    
-	<input type="radio" name="ecriture" value="au style original" />style original<br />
-	<input type="radio" name="ecriture" value="[précisions sur la façon dont est écrite l'histoire]" />autre [à préciser dans la critique]    
-	<br /><br />
-</form>
-  
-<form name="recommandation">
-<b>Recommanderais-tu ce livre ?</b><br />
-	<input type="radio" name="recommandation" value="est un chef d'oeuvre !" />un chef d'oeuvre !    
-	<input type="radio" name="recommandation" value="est à ne pas rater !" />à ne pas rater !    
-    <input type="radio" name="recommandation" value="est à lire absolument" />à lire absolument !<br />
-	<input type="radio" name="recommandation" value="se dévore d'une traite !" />à dévorer !    
-	<input type="radio" name="recommandation" value="est impossible à lâcher !" />impossible à lâcher !    
-	<input type="radio" name="recommandation" value="invite à la rêverie." />une invitation à la rêverie<br />
-    <input type="radio" name="recommandation" value="permet de passer un bon moment." />un bon moment à passer    
-	<input type="radio" name="recommandation" value="offre une lecture sympathique." />une lecture sympathique<br />	
-	<input type="radio" name="recommandation" value="est à laisser sur l'étagère." />à laisser sur l'étagère    
-	<input type="radio" name="recommandation" value="est sans intérêt." />sans intérêt    
-	<input type="radio" name="recommandation" value="tombe des mains." />tombe des mains    
-	<br /><br />
-</form>
- <br />
- 
-<form name="critique">
-	<input type="button" onclick="myCritic()" value="Générer la critique" />
-	<input type="button" onclick="document.forms[0].reset();document.forms[1].reset();document.forms[2].reset();document.forms[3].reset();document.forms[4].reset();document.forms[5].reset();document.forms[6].reset();document.forms[7].reset();document.forms[8].reset();document.forms[9].reset();document.forms[10].reset();document.forms[11].reset();document.forms[12].reset();" value="Rétablir les valeurs par defaut" />
-  <br /><br /><br>
-  
-<br />
-<h3><b><u>III - Personnalisation</u></b></h3>
-<br />
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Générateur de critique e-sidoc</title>
+	<style type="text/css">
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+		}
+		.question-titre {
+			font-weight: bold;
+		}
+		.question-bloc {
+			padding-bottom: 1.5em;
+		}
+		.astuce {
+			font-size: 0.9em;
+			margin-top: -0.25em;
+			font-weight: 100;
+		}
+		.alert li {
+			margin-left: 3em;
+		}
+		.chapitre {
+			margin-top: 2em;
+		}
+		.alert-heading {
+			font-weight: bold;
+			margin-bottom: 0.1em;
+		}
+		#critique {
+			margin-bottom: 20px;
+		}
+		.emotion-emoji {
+			font-size: 1.5em;
+			text-align: center;
+			/*padding-right: 0.4em;*/
+			marin:0 auto;
+			width: 2em;
+			filter: grayscale(100%);
+		}
+		.emotion-emoji:hover {
+			filter: grayscale(50%);
+		}
+		.rating-emotions ul > li.emotion.selected .emotion-emoji{
+			filter: grayscale(0%);
+		}
+
+		/* rajoute la fleche dans la liste de sélection multiple */
+		.select2-selection--multiple:before {
+		    content: "";
+		    position: absolute;
+		    right: 7px;
+		    top: 42%;
+		    border-top: 5px solid #888;
+		    border-left: 4px solid transparent;
+		    border-right: 4px solid transparent;
+		}
+
+		/* Rating Star Widgets Style */
+		.rating-stars ul, .rating-emotions ul {
+			list-style-type:none;
+			padding:0;
+
+			-moz-user-select:none;
+			-webkit-user-select:none;
+		}
+		.rating-stars ul > li.star, .rating-emotions ul > li.emotion {
+			display:inline-block;
+
+		}
+
+		/* Idle State of the stars */
+		.rating-stars ul > li.star > i.fa {
+			font-size:2em; /* Change the size of the stars */
+			color:#CCC; /* Color on idle state */
+		}
+
+		/* Hover state of the stars */
+		.rating-stars ul > li.star.hover > i.fa {
+			color:#FFCC36;
+		}
+
+		/* Selected state of the stars */
+		.rating-stars ul > li.star.selected > i.fa {
+			color:#FF912C;
+		}
+
+	</style>
+
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/libs/twitter-bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="https://backend.esidoc.fr/libs/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/css/all.min.css" type="text/css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css">
+
+</head>
+<body>
+	<article>
+		<form id="generateur-critique">
+			<div id="presentation" class="container-fluid chapitre">
+				<h2 class="title">I - Présentation du livre</h2>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="titre"><div class="question-titre">Quel est le titre du livre ?</div></label>
+					<input  id="titre" type="text" class="form-control" placeholder="Titre du livre">
+				</div>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="auteur"><div class="question-titre">Qui est l'auteur du livre ?</div></label>
+					<input  id="auteur" type="text" class="form-control" placeholder="Nom de l'auteur">
+				</div>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="type">
+						<div class="question-titre">De quel type de livre s'agit-il ?</div>
+					</label>
+					<select id="type" class="form-control select2-single" data-tooltips="Tu peux écrire un autre type si il n'est pas dans la liste" data-toggle="tooltip">
+						<option></option>
+						<option value="un album">album</option>
+						<option value="une bandes-dessinées">bandes-dessinées</option>
+						<option value="un conte">conte</option>
+						<option value="un manga">manga</option>
+						<option value="une pièce de théâtre">théâtre</option>
+						<option value="un recueil de poésie">recueil de poésie</option>
+						<option value="un roman">roman</option>
+					</select>
+				</div>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="genre">
+						<div class="question-titre">Quel est le genre de fiction ?</div>
+					</label>
+					<select id="genre" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre genre si il n'est pas dans la liste" data-toggle="tooltip" multiple>
+						<option value="animalier">animalier</option>
+						<option value="amour">amour</option>
+						<option value="biographique">biographique</option>
+						<option value="fantastique">fantastique</option>
+						<option value="historique">historique</option>
+						<option value="horreur">horreur</option>
+						<option value="humoristique">humoristique</option>
+						<option value="merveilleux">merveilleux</option>
+						<option value="policier">policier</option>
+						<option value="science-fiction">science-fiction</option>
+						<option value="société">société</option>
+					</select>
+				</div>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="theme">
+						<div class="question-titre">Quel est le thème de fiction ?</div>
+					</label>
+					<select id="theme" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre thème si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
+						<option value="d'amitié">l'amitié </option>
+						<option value="d'amour">l'amour</option>
+						<option value="des différences">les différences </option>
+						<option value="d'écologie">l'écologie  </option>
+						<option value="d'exil">l'exil</option>
+						<option value="de lafamille">la famille</option>
+						<option value="de la guerre">la guerre</option>
+						<option value="deharcèlement">le harcèlement</option>
+						<option value="de la maladie">la maladie</option>
+						<option value="de mensonge">le mensonge </option>
+						<option value="de secret">les secrets</option>
+						<option value="de sport">le sport </option>
+						<option value="de voyages">les voyages</option>
+					</select>
+
+				</div>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="resume">
+						<div class="question-titre">Résume l'histoire en une ou deux phrases.</div>
+						<div class="form-text text-muted astuce">Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire.</div>
+					</label>
+					<textarea rows="3" id="resume" class="form-control" data-tooltips="Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire." data-toggle="tooltip" data-placement="right"></textarea>
+				</div>
+			</div>
+
+			<div id="avis" class="container-fluid chapitre">
+				<h2>II - Avis argumenté</h2>
+
+				<div class="form-group form-group-sm row question-bloc">
+					<label for="emotion">
+						<div class="question-titre">Qu'as-tu ressenti à la lecture ?</div>
+					</label>
+					
+					<div class='rating-emotions'>
+						<ul id='emotions'>
+							<li class='emotion' data-val="effrayante" data-title="de la peur" data-toggle="tooltip" data-placement="bottom" data-value='1'>
+								<div class="emotion-emoji">😱</div>
+							</li>
+							<li class='emotion' data-val="joyeuse" data-title="de la joie" data-toggle="tooltip" data-placement="bottom" data-value='2'>
+								<div class="emotion-emoji">😊</div>
+							</li>
+							<li class='emotion' data-val="enrageante" data-title="de la colère" data-toggle="tooltip" data-placement="bottom" data-value='3'>
+								<div class="emotion-emoji">😠</div>
+							</li>
+							<li class='emotion' data-val="triste" data-title="de la tristesse" data-toggle="tooltip" data-placement="bottom" data-value='4'>
+								<div class="emotion-emoji">😥</div>
+							</li>
+						</ul>
+					</div>
+
+					
+					<div class="form-group form-group-sm row question-bloc">
+						<label for="ressenti">
+							<div class="question-titre">Pourquoi as-tu ressenti cette émotion ?</div>
+							<div class="form-text text-muted astuce">Continue la phrase : car&hellip;</div>
+						</label>
+						<textarea rows="3" id="ressenti" class="form-control">car </textarea>
+					</div>
+
+
+					<div class="form-group form-group-sm row question-bloc">
+						<label for="stars">
+							<div class="question-titre">Quel est ton avis sur ce livre ?</div>
+						</label>
+
+						<!-- Rating Stars Box -->
+						<div class='rating-stars'>
+							<ul id='stars'>
+								<li class='star' data-val="J'ai détesté" data-value='1'>
+									<i class='fa fa-star fa-fw'></i>
+								</li>
+								<li class='star' data-val="Je n'ai pas aimé" data-value='2'>
+									<i class='fa fa-star fa-fw'></i>
+								</li>
+								<li class='star' data-val="J'ai aimé" data-value='3'>
+									<i class='fa fa-star fa-fw'></i>
+								</li>
+								<li class='star' data-val="J'ai beaucoup aimé" data-value='4'>
+									<i class='fa fa-star fa-fw'></i>
+								</li>
+								<li class='star' data-val="J'ai adoré" data-value='5'>
+									<i class='fa fa-star fa-fw'></i>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="form-group form-group-sm row question-bloc">
+						<label for="qualificatif">
+							<div class="question-titre">Comment peux-tu qualifier l'histoire ?</div>
+						</label>
+						<select id="qualificatif" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre qualificatif si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
+							<option value="pleine d'actions">pleine d'actions</option>
+							<option value="captivante">captivante</option>
+							<option value="confuse">confuse (difficile à comprendre)</option>
+							<option value="dépaysante">dépaysante</option>
+							<option value="drôle">drôle</option>
+							<option value="émouvante">émouvante</option>
+							<option value="ennuyeuse">ennuyeuse</option>
+							<option value="instructive">instructive</option>
+							<option value="intrigante">intrigante</option>
+							<option value="originale">originale</option>
+							<option value="pathétique">pathétique</option>
+							<option value="poétique">poétique</option>
+							<option value="réaliste">réaliste</option>
+							<option value="révoltante">révoltante</option>
+							<option value="surprenante">surprenante</option>
+							<option value="pleine de suspense">pleine de suspense</option>
+						</select>
+					</div>
+
+					<div class="form-group form-group-sm row question-bloc">
+						<label for="ecriture">
+							<div class="question-titre">Que penses-tu de la façon dont est écrite l'histoire ?</div>
+						</label>
+						<select id="ecriture" class="form-control select2-multiple" data-tooltips="Tu peux écrire ce que tu penses si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
+							<option value="court">peu de pages</option>
+							<option value="aux nombreuses pages">beaucoup de pages</option>
+							<option value="au vocabulaire difficile à comprendre">vocabulaire compliqué</option>
+							<option value="facile à comprendre">facile à comprendre</option>
+							<option value="bien écrit">bien écrite </option>
+							<option value="au style original">style original</option>
+						</select>
+					</div>
+
+					<div class="form-group form-group-sm row question-bloc">
+						<label for="recommandation">
+							<div class="question-titre">Recommanderais-tu ce livre ?</div>
+						</label>
+						<select id="recommandation" class="form-control select2-single" data-tooltips="Tu peux écrire ta propre recommandation si elle n'est pas dans la liste" data-toggle="tooltip">
+							<option></option>
+							<option value="est un chef d'oeuvre !">un chef d'oeuvre ! </option>
+							<option value="est à ne pas rater !">à ne pas rater !</option>
+							<option value="est à lire absolument !">à lire absolument !</option>
+							<option value="se dévore d'une traite !">à dévorer ! </option>
+							<option value="est impossible à lâcher !">impossible à lâcher !</option>
+							<option value="invite à la rêverie.">une invitation à la rêverie.</option>
+							<option value="permet de passer un bon moment.">un bon moment à passer.</option>
+							<option value="offre une lecture sympathique.">une lecture sympathique.</option>
+							<option value="est à laisser sur l'étagère.">à laisser sur l'étagère.</option>
+							<option value="est sans intérêt.">sans intérêt.</option>
+							<option value="tombe des mains.">tombe des mains.</option>
+						</select>	
+					</div>
+
+
+					<div class="form-group form-group-sm row question-bloc">	
+						<button type="button" id="generer" class="btn btn-success" value="Générer la critique" aria-label="Left Align">
+							<span aria-hidden="true"><i class="fa fa-check"></i> Générer la critique</span>
+						</button>
+
+						<button type="button" id="reset" class="btn btn-primary" value="Rétablir les valeurs par defaut" aria-label="Left Align">
+							<span aria-hidden="true"><i class="fa fa-undo"></i> Rétablir les valeurs par defaut</span>
+						</button>
+					</div>
+				</div>
+			</div>		
+
+			<div id="personnalisation" class="container-fluid chapitre">
+				<h2>III - Personnalisation</h2>
+				<div class="form-group form-group-sm row question-bloc">	
+					<div class="alert alert-info" role="alert">
+						<h4 class="alert-heading"><i class="fa fa-exclamation-triangle fa-lg fa-fw"></i> Avant de copier la critique :</h4>
+						<ul>
+							<li>relis-la et corrige les éventuelles coquilles</li>
+							<li>enrichis-la en ajoutant d'autres éléments personnels.</li>
+						</ul>
+					</div>
+					<textarea id="critique" rows="10" readonly class="form-control"></textarea>
+
+					<div id="copy-alert" class="alert alert-success alert-dismissible" role="alert">
+						<button id="copy-close" type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+						Texte copié !
+					</div>
+
+					<button type="button" id="copy" class="btn btn-default citation-copy">
+						<i class="fa fa-copy" aria-hidden="true"></i> Copier le texte
+					</button>
+				</div>
+			</div>
 		
-	<b><span color="red" style="color: red;">Avant de copier la critique : </span></b><br />
-  - relis-la et corrige les éventuelles coquilles<br />
-  - enrichis-la en ajoutant d'autres éléments personnels.<br /><br />
-  
-	<textarea id="order" cols="65" rows="10" readonly="readonly"></textarea>
-</form>
-<script type="text/javascript">// <![CDATA[
-function myCritic() {
-var livre = document.forms["livre"];
-  var txt_livre = "";
-  var i;
-  for (i = 0; i < livre.length; i++) {
-    if (livre[i].checked) {
-      txt_livre = txt_livre + livre[i].value + " ";
-    }
-  }
-var genre = document.forms["genre"];
-  var txt_genre = "";
-  var b;
-  for (b = 0; b < genre.length; b++) {
-    if (genre[b].checked) {
-      txt_genre = txt_genre + genre[b].value + " ";
-    }
-	  }
-var theme = document.forms["theme"];
-  var txt_theme = "";
-  var c;
-  for (c = 0; c < theme.length; c++) {
-    if (theme[c].checked) {
-      txt_theme = txt_theme + theme[c].value;
-    }
-  }
-var emotion = document.forms["emotion"];
-  var txt_emotion = "";
-  var d;
-  for (d = 0; d < emotion.length; d++) {
-    if (emotion[d].checked) {
-      txt_emotion = txt_emotion + emotion[d].value;
-    }
-  }
-var avis = document.forms["avis"];
-  var txt_avis = "";
-  var e;
-  for (e = 0; e < avis.length; e++) {
-    if (avis[e].checked) {
-      txt_avis = txt_avis + avis[e].value;
-    }
-  }
-var histoire = document.forms["histoire"];
-  var txt_qualifhist = "";
-  var f;
-  for (f = 0; f < histoire.length; f++) {
-    if (histoire[f].checked) {
-      txt_qualifhist = txt_qualifhist + histoire[f].value;
-    }
-  }
-var ecriture = document.forms["ecriture"];
-  var txt_ecriture = "";
-  var g;
-  for (g = 0; g < ecriture.length; g++) {
-    if (ecriture[g].checked) {
-      txt_ecriture = txt_ecriture + ecriture[g].value;
-    }
-  }
-var recommandation = document.forms["recommandation"];
-  var txt_recomm = "";
-  var h;
-  for (h = 0; h < recommandation.length; h++) {
-    if (recommandation[h].checked) {
-      txt_recomm = txt_recomm + recommandation[h].value;
-    }
-  }
-  document.getElementById("order").value = document.getElementById("txt_titre").value + ", écrit par " + document.getElementById("txt_auteur").value + ", est " + txt_livre + txt_genre + "qui parle " + txt_theme + ". " + document.getElementById("txt_resume").value + " L'histoire est " + txt_emotion + " " + document.getElementById("txt_justifemo").value + ". " + txt_avis + " lire ce livre, car j'ai trouvé l'histoire " + txt_qualifhist + ". Ce livre " + txt_ecriture + " " + txt_recomm ;
-}
-// ]]></script>
+		</form>
+	</article>
+
+	<script src="https://frontend.esidoc.fr/libs/jquery/jquery.min.js?ver=1583172060000"></script>
+	<script src="https://frontend.esidoc.fr/libs/twitter-bootstrap/js/bootstrap.min.js?ver=acbc186d"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/i18n/fr.js"></script>
+
+	<script type="text/javascript">
+
+	/** Rajoute les vigule et le "et" final à une énumération **/
+	function choixMultiple(tableau) {
+		var texte = "";
+
+	 	if (tableau.length > 1) {                           // Si il y a plus d'un choix
+		    for (var i = 0; i <= tableau.length-2; i++) {   // 	 on parcours le tableau sauf le dernier item
+				texte+=tableau[i]+", ";						//   on ajoute les virgules à la fin de chaque item
+			}
+			texte = texte.slice(0, -2);						//   on elève la vigule en trop
+			texte += " et "+tableau[i];						//   on ajoute un "et" ainsi que le dernier item
+	    } else {											// Sinon il n'y a qu'un seul choix
+	    	texte=tableau[0];								// 	 on renvoie le choix
+	    }
+
+		return texte;	
+	}
+
+	/** Ajoute la majuscule initiale **/
+	function addMajusculeInitiale(phrase) {
+		phrase = phrase.trim();															// supprime les espaces en trop en début et fin de phrase
+		phrase = phrase.charAt(0).toUpperCase() + phrase.slice(1);						// ajoute la majuscule initiale
+		return phrase;
+	}
+
+	/** Ajoute le point final **/
+	function addPointFinal(phrase = "") {
+		phrase = phrase.trim();															// supprime les espaces en trop en début et fin de phrase
+		if (phrase.slice(-1)!="." && phrase.slice(-1)!="?" && phrase.slice(-1)!="!") {  // Si il n'y a pas déjà un signe de pontuation final
+			phrase = phrase+". ";														//   on ajoute un point	avec un espace			
+		}
+		return phrase;
+	}
+
+	/** Génération de la critique **/
+	function myCritic() {
+		// on récupère les valeurs du formulaire qu'on transforme un peu (majuscule, point, virugle...)
+		var titre = addMajusculeInitiale($('#titre').val());		
+		var auteur = addMajusculeInitiale($('#auteur').val());
+		var type = $("#type option:selected").val();
+		var genre = choixMultiple($("#genre").val());
+		var theme = addPointFinal(choixMultiple($("#theme").val()));
+		var resume = addMajusculeInitiale(addPointFinal($('#resume').val()));
+		var emotion = $('#emotions li.selected').data('val');
+		var ressenti = addPointFinal($('#ressenti').val());
+		var avis = $('#stars li.selected').last().data('val');
+		var qualificatif  = addPointFinal(choixMultiple($("#qualificatif").val()));
+		var ecriture = choixMultiple($("#ecriture").val());
+		var recommandation = $("#recommandation option:selected").val();
+
+		// on rajoute les mots de liaison et on affiche le tout
+		$('#critique').val(
+			titre+","+ " écrit par "+auteur+" est "+type+" "+genre+" qui parle "+theme+"\n"+
+			resume+"\n"+
+			"L'histoire est "+emotion+" "+ressenti+"\n"+
+			avis+" lire ce livre, car j'ai trouvé l'histoire "+qualificatif+"\n"+
+			"Ce livre "+ecriture+" "+recommandation
+		);
+		//$('#critique').val(`${titre} écrit par ${auteur} est ${type} ${genre} qui parle ${theme} ${resume} L'histoire est ${emotion} ${ressenti}${avis} lire ce livre, car j'ai trouvé l'histoire ${qualificatif} Ce livre ${ecriture} ${recommandation}`);
+		$('html,body, window.parent.document').animate({scrollTop: $("#personnalisation").offset().top}, 'slow'); // défile jusqu'à la critique généré
+	}
+
+	/** Remise à zéro du formulaire **/
+	function raz(){
+		$('input').val(null);                                 // reset les zones de saisie
+		$('textarea').val(null);                              // reset les zones de texte
+		$('.select2-single').val(null).trigger('change');     // reset les listes de selection simple
+		$('.select2-multiple').val(null).trigger('change');   // reset les listes de selection multiple
+
+		var stars = $("#stars").children('li.star');          // reset les étoiles
+		for (i = 0; i < stars.length; i++) {
+			$(stars[i]).removeClass('selected');
+		}
+
+	    var emotions = $("#emotions").children('li.emotion'); // reset les émotions
+	    for (i = 0; i < emotions.length; i++) {
+	    	$(emotions[i]).removeClass('selected');
+	    }
+
+	    $('#ressenti').val("car ");                          // remet le "car " dans la zone de texte
+	    $('html,body').animate({scrollTop: $("#presentation").offset().top}, 'slow'); // défile jusqu'au début de la page
+	}
+
+	/** Copie la critique dans le presse-papier **/
+	function copy(){
+		document.querySelector("#critique").select();
+		document.execCommand("copy");
+	    $("#copy-alert").fadeIn(200); // affiche l'alerte "texte copié"
+	}
+
+
+	/** Réaction des boutons **/
+	$("#generer").click(function() {		   // bouton "générer la critique"
+		myCritic();
+	});
+
+	$("#reset").click(function() {			   // bouton "rétablir les valeurs par défaut"
+		var confirmation = confirm("Es-tu sûr de vouloir réinitialiser ce formulaire ?");
+		if (confirmation) {
+			raz();
+		}
+	});
+
+	$("#copy").click(function() {			   // bouton "copier le texte"
+		copy();
+	});
+
+	$('#copy-close').click(function() { 	   // croix ferme l'alerte "texte copié""
+		$("#copy-alert").hide(); 
+	});
+
+
+	$('#emotions li').on('click', function(){  // emoji en couleur
+		$(this).parent().children('li.emotion').removeClass('selected');
+		$(this).addClass('selected');
+	});
+
+
+	/** Initialisation des éléments **/
+	$(document).ready(function() {
+		// cache l'alerte texte copié
+		$("#copy-alert").hide();
+
+		// initialise liste de sélection simple
+		$('.select2-single').select2({
+			language: "fr",
+			theme: 'bootstrap',
+			tags: true,
+			placeholder: 'Choisis une seule option'
+		});
+
+		// initialise liste de sélection multiple
+		$('.select2-multiple').select2({
+			language: "fr",
+			theme: 'bootstrap',
+			tags: true,
+			allowClear: true,
+			placeholder: 'Choisis une ou plusieurs options'
+		});
+
+		// ajout des infobulles pour les listes de sélections
+		$(".select2-container").tooltip({
+			title: function() {
+				return $(this).prev().attr("data-tooltips");
+			},
+			placement: "top"
+		});
+
+		// active les autres infobulles
+		$('[data-toggle="tooltip"]').tooltip()
+	});
+
+
+	/** Rating star widget **/
+	/** https://codepen.io/mmoradi08/pen/yLyYrGg **/
+	$(document).ready(function(){
+
+		/* 1. Visualizing things on Hover - See next part for action on click */
+		$('#stars li').on('mouseover', function(){
+	    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+	    // Now highlight all the stars that's not after the current hovered star
+	    $(this).parent().children('li.star').each(function(e){
+	    	if (e < onStar) {
+	    		$(this).addClass('hover');
+	    	}
+	    	else {
+	    		$(this).removeClass('hover');
+	    	}
+	    });
+	    
+		}).on('mouseout', function(){
+			$(this).parent().children('li.star').each(function(e){
+				$(this).removeClass('hover');
+			});
+	});
+
+
+	/* 2. Action to perform on click */
+	$('#stars li').on('click', function(){
+	    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+	    var stars = $(this).parent().children('li.star');
+	    
+	    for (i = 0; i < stars.length; i++) {
+	    	$(stars[i]).removeClass('selected');
+	    }
+	    
+	    for (i = 0; i < onStar; i++) {
+	    	$(stars[i]).addClass('selected');
+	    }	    
+	});
+});
+
+	</script>
+</body>
