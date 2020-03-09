@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Générateur de critique e-sidoc</title>
-	<style type="text/css">
+	<style>
 		body {
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
 		}
@@ -36,7 +36,7 @@
 			font-size: 1.5em;
 			text-align: center;
 			/*padding-right: 0.4em;*/
-			marin:0 auto;
+			margin:0 auto;
 			width: 2em;
 			filter: grayscale(100%);
 		}
@@ -103,21 +103,19 @@
 				<h2 class="title">I - Présentation du livre</h2>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="titre"><div class="question-titre">Quel est le titre du livre ?</div></label>
+					<label for="titre" class="question-titre">Quel est le titre du livre ?</label>
 					<input  id="titre" type="text" class="form-control" placeholder="Titre du livre">
 				</div>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="auteur"><div class="question-titre">Qui est l'auteur du livre ?</div></label>
+					<label for="auteur" class="question-titre">Qui est l'auteur du livre ?</label>
 					<input  id="auteur" type="text" class="form-control" placeholder="Nom de l'auteur">
 				</div>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="type">
-						<div class="question-titre">De quel type de livre s'agit-il ?</div>
-					</label>
+					<label for="type" class="question-titre">De quel type de livre s'agit-il ?</label>
 					<select id="type" class="form-control select2-single" data-tooltips="Tu peux écrire un autre type si il n'est pas dans la liste" data-toggle="tooltip">
-						<option></option>
+						<option label="vide"></option>
 						<option value="un album">album</option>
 						<option value="une bandes-dessinées">bandes-dessinées</option>
 						<option value="un conte">conte</option>
@@ -129,9 +127,7 @@
 				</div>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="genre">
-						<div class="question-titre">Quel est le genre de fiction ?</div>
-					</label>
+					<label for="genre" class="question-titre">Quel est le genre de fiction ?</label>
 					<select id="genre" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre genre si il n'est pas dans la liste" data-toggle="tooltip" multiple>
 						<option value="animalier">animalier</option>
 						<option value="amour">amour</option>
@@ -148,9 +144,7 @@
 				</div>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="theme">
-						<div class="question-titre">Quel est le thème de fiction ?</div>
-					</label>
+					<label for="theme" class="question-titre">Quel est le thème de fiction ?</label>
 					<select id="theme" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre thème si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 						<option value="d'amitié">l'amitié </option>
 						<option value="d'amour">l'amour</option>
@@ -170,10 +164,9 @@
 				</div>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="resume">
-						<div class="question-titre">Résume l'histoire en une ou deux phrases.</div>
-						<div class="form-text text-muted astuce">Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire.</div>
-					</label>
+					<label for="resume" class="question-titre">Résume l'histoire en une ou deux phrases.</label>
+					<div class="form-text text-muted astuce">Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire.</div>
+					
 					<textarea rows="3" id="resume" class="form-control" data-tooltips="Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire." data-toggle="tooltip" data-placement="right"></textarea>
 				</div>
 			</div>
@@ -182,9 +175,7 @@
 				<h2>II - Avis argumenté</h2>
 
 				<div class="form-group form-group-sm row question-bloc">
-					<label for="emotion">
-						<div class="question-titre">Qu'as-tu ressenti à la lecture ?</div>
-					</label>
+					<label class="question-titre">Qu'as-tu ressenti à la lecture ?</label>
 					
 					<div class='rating-emotions'>
 						<ul id='emotions'>
@@ -205,18 +196,15 @@
 
 					
 					<div class="form-group form-group-sm row question-bloc">
-						<label for="ressenti">
-							<div class="question-titre">Pourquoi as-tu ressenti cette émotion ?</div>
-							<div class="form-text text-muted astuce">Continue la phrase : car&hellip;</div>
-						</label>
+						<label for="ressenti" class="question-titre">Pourquoi as-tu ressenti cette émotion ?</label>
+						<div class="form-text text-muted astuce">Continue la phrase : car&hellip;</div>
+						
 						<textarea rows="3" id="ressenti" class="form-control">car </textarea>
 					</div>
 
 
 					<div class="form-group form-group-sm row question-bloc">
-						<label for="stars">
-							<div class="question-titre">Quel est ton avis sur ce livre ?</div>
-						</label>
+						<label class="question-titre">Quel est ton avis sur ce livre ?</label>
 
 						<!-- Rating Stars Box -->
 						<div class='rating-stars'>
@@ -241,9 +229,7 @@
 					</div>
 
 					<div class="form-group form-group-sm row question-bloc">
-						<label for="qualificatif">
-							<div class="question-titre">Comment peux-tu qualifier l'histoire ?</div>
-						</label>
+						<label for="qualificatif" class="question-titre">Comment peux-tu qualifier l'histoire ?</label>
 						<select id="qualificatif" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre qualificatif si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 							<option value="pleine d'actions">pleine d'actions</option>
 							<option value="captivante">captivante</option>
@@ -265,9 +251,7 @@
 					</div>
 
 					<div class="form-group form-group-sm row question-bloc">
-						<label for="ecriture">
-							<div class="question-titre">Que penses-tu de la façon dont est écrite l'histoire ?</div>
-						</label>
+						<label for="ecriture" class="question-titre">Que penses-tu de la façon dont est écrite l'histoire ?</label>
 						<select id="ecriture" class="form-control select2-multiple" data-tooltips="Tu peux écrire ce que tu penses si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 							<option value="court">peu de pages</option>
 							<option value="aux nombreuses pages">beaucoup de pages</option>
@@ -279,11 +263,9 @@
 					</div>
 
 					<div class="form-group form-group-sm row question-bloc">
-						<label for="recommandation">
-							<div class="question-titre">Recommanderais-tu ce livre ?</div>
-						</label>
+						<label for="recommandation" class="question-titre">Recommanderais-tu ce livre ?</label>
 						<select id="recommandation" class="form-control select2-single" data-tooltips="Tu peux écrire ta propre recommandation si elle n'est pas dans la liste" data-toggle="tooltip">
-							<option></option>
+							<option label="vide"></option>
 							<option value="est un chef d'oeuvre !">un chef d'oeuvre ! </option>
 							<option value="est à ne pas rater !">à ne pas rater !</option>
 							<option value="est à lire absolument !">à lire absolument !</option>
@@ -342,7 +324,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/i18n/fr.js"></script>
 
-	<script type="text/javascript">
+	<script>
 
 	/** Rajoute les vigule et le "et" final à une énumération **/
 	function choixMultiple(tableau) {
