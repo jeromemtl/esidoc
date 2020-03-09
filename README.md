@@ -1,2 +1,2 @@
-# esidoc
-Codes pour intégrer des modules dans esidoc
+# e-sidoc
+Codes pour intégrer des modules dans e-sidoc
