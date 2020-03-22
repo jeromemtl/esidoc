@@ -6,7 +6,7 @@
 	<title>Générateur de critique e-sidoc</title>
 	<style>
 		body {
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+			font-family: "Helvetica Neue", "Helvetica", "Arial", "sans-serif"; 
 		}
 		.question-titre {
 			font-weight: bold;
@@ -19,11 +19,11 @@
 			margin-top: -0.25em;
 			font-weight: 100;
 		}
-		.alert li {
-			margin-left: 3em;
-		}
 		.chapitre {
-			margin-top: 2em;
+			margin-top: 1em;
+		}
+		.alert li {
+			margin-left: 5em;
 		}
 		.alert-heading {
 			font-weight: bold;
@@ -45,6 +45,7 @@
 		}
 		.rating-emotions ul > li.emotion.selected .emotion-emoji{
 			filter: grayscale(0%);
+			transform: scale(1.5);
 		}
 
 		/* rajoute la fleche dans la liste de sélection multiple */
@@ -56,6 +57,32 @@
 		    border-top: 5px solid #888;
 		    border-left: 4px solid transparent;
 		    border-right: 4px solid transparent;
+		}
+
+		.span-textarea {
+			margin-top: 3.5em;
+		}
+
+		.tremblement{
+			animation: shake 1.5s ease;
+		}
+
+		@keyframes shake {
+		  10%, 90% {
+		    transform: translate3d(-1px, 0, 0);
+		  }
+		  
+		  20%, 80% {
+		    transform: translate3d(2px, 0, 0);
+		  }
+
+		  30%, 50%, 70% {
+		    transform: translate3d(-4px, 0, 0);
+		  }
+
+		  40%, 60% {
+		    transform: translate3d(4px, 0, 0);
+		  }
 		}
 
 		/* Rating Star Widgets Style */
@@ -85,12 +112,13 @@
 		/* Selected state of the stars */
 		.rating-stars ul > li.star.selected > i.fa {
 			color:#FF912C;
+			transform: scale(1.3);
 		}
 
 	</style>
 
 	<link rel="stylesheet" href="https://frontend.esidoc.fr/libs/twitter-bootstrap/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="https://backend.esidoc.fr/libs/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/libs/font-awesome/css/font-awesome.min.css" type="text/css">
 	<link rel="stylesheet" href="https://frontend.esidoc.fr/css/all.min.css" type="text/css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css">
@@ -102,18 +130,20 @@
 			<div id="presentation" class="container-fluid chapitre">
 				<h2 class="title">I - Présentation du livre</h2>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="titre" class="question-titre">Quel est le titre du livre ?</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="titre" class="question-titre control-label">Quel est le titre du livre ?</label>
 					<input  id="titre" type="text" class="form-control" placeholder="Titre du livre">
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				</div>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="auteur" class="question-titre">Qui est l'auteur du livre ?</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="auteur" class="question-titre control-label">Qui est l'auteur du livre ?</label>
 					<input  id="auteur" type="text" class="form-control" placeholder="Nom de l'auteur">
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				</div>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="type" class="question-titre">De quel type de livre s'agit-il ?</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="type" class="question-titre control-label">De quel type de livre s'agit-il ?</label>
 					<select id="type" class="form-control select2-single" data-tooltips="Tu peux écrire un autre type si il n'est pas dans la liste" data-toggle="tooltip">
 						<option label="vide"></option>
 						<option value="un album">album</option>
@@ -124,10 +154,11 @@
 						<option value="un recueil de poésie">recueil de poésie</option>
 						<option value="un roman">roman</option>
 					</select>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				</div>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="genre" class="question-titre">Quel est le genre de fiction ?</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="genre" class="question-titre control-label">Quel est le genre de fiction ?</label>
 					<select id="genre" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre genre si il n'est pas dans la liste" data-toggle="tooltip" multiple>
 						<option value="animalier">animalier</option>
 						<option value="amour">amour</option>
@@ -141,10 +172,11 @@
 						<option value="science-fiction">science-fiction</option>
 						<option value="société">société</option>
 					</select>
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				</div>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="theme" class="question-titre">Quel est le thème de fiction ?</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="theme" class="question-titre control-label">Quel est le thème de fiction ?</label>
 					<select id="theme" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre thème si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 						<option value="d'amitié">l'amitié </option>
 						<option value="d'amour">l'amour</option>
@@ -160,24 +192,24 @@
 						<option value="de sport">le sport </option>
 						<option value="de voyages">les voyages</option>
 					</select>
-
+					<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 				</div>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label for="resume" class="question-titre">Résume l'histoire en une ou deux phrases.</label>
+				<div class="form-group form-group-sm row question-bloc has-feedback">
+					<label for="resume" class="question-titre control-label">Résume l'histoire en une ou deux phrases.</label>
 					<div class="form-text text-muted astuce">Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire.</div>
 					
 					<textarea rows="3" id="resume" class="form-control" data-tooltips="Pense à répondre aux questions QUI ?, QUOI ?, POURQUOI ?, QUAND ? et OÙ ?, quand c'est précisé dans l'histoire." data-toggle="tooltip" data-placement="right"></textarea>
+					<span class="glyphicon form-control-feedback span-textarea" aria-hidden="true"></span>
 				</div>
 			</div>
 
 			<div id="avis" class="container-fluid chapitre">
 				<h2>II - Avis argumenté</h2>
 
-				<div class="form-group form-group-sm row question-bloc">
-					<label class="question-titre">Qu'as-tu ressenti à la lecture ?</label>
-					
+				<div class="form-group form-group-sm row question-bloc has-feedback">	
 					<div class='rating-emotions'>
+						<label class="question-titre control-label">Qu'as-tu ressenti à la lecture ?</label>
 						<ul id='emotions'>
 							<li class='emotion' data-val="effrayante" data-title="de la peur" data-toggle="tooltip" data-placement="bottom" data-value='1'>
 								<div class="emotion-emoji">😱</div>
@@ -192,22 +224,23 @@
 								<div class="emotion-emoji">😥</div>
 							</li>
 						</ul>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 					</div>
-
+				</div>
 					
-					<div class="form-group form-group-sm row question-bloc">
-						<label for="ressenti" class="question-titre">Pourquoi as-tu ressenti cette émotion ?</label>
+					<div class="form-group form-group-sm row question-bloc has-feedback">
+						<label for="ressenti" class="question-titre control-label">Pourquoi as-tu ressenti cette émotion ?</label>
 						<div class="form-text text-muted astuce">Continue la phrase : car&hellip;</div>
 						
 						<textarea rows="3" id="ressenti" class="form-control">car </textarea>
+						<span class="glyphicon form-control-feedback span-textarea" aria-hidden="true"></span>
 					</div>
 
 
-					<div class="form-group form-group-sm row question-bloc">
-						<label class="question-titre">Quel est ton avis sur ce livre ?</label>
-
+					<div class="form-group form-group-sm row question-bloc has-feedback">
 						<!-- Rating Stars Box -->
 						<div class='rating-stars'>
+							<label class="question-titre control-label">Quel est ton avis sur ce livre ?</label>
 							<ul id='stars'>
 								<li class='star' data-val="J'ai détesté" data-value='1'>
 									<i class='fa fa-star fa-fw'></i>
@@ -225,11 +258,12 @@
 									<i class='fa fa-star fa-fw'></i>
 								</li>
 							</ul>
+							<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 						</div>
 					</div>
 
-					<div class="form-group form-group-sm row question-bloc">
-						<label for="qualificatif" class="question-titre">Comment peux-tu qualifier l'histoire ?</label>
+					<div class="form-group form-group-sm row question-bloc has-feedback">
+						<label for="qualificatif" class="question-titre control-label">Comment peux-tu qualifier l'histoire ?</label>
 						<select id="qualificatif" class="form-control select2-multiple" data-tooltips="Tu peux écrire un autre qualificatif si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 							<option value="pleine d'actions">pleine d'actions</option>
 							<option value="captivante">captivante</option>
@@ -248,10 +282,11 @@
 							<option value="surprenante">surprenante</option>
 							<option value="pleine de suspense">pleine de suspense</option>
 						</select>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 					</div>
 
-					<div class="form-group form-group-sm row question-bloc">
-						<label for="ecriture" class="question-titre">Que penses-tu de la façon dont est écrite l'histoire ?</label>
+					<div class="form-group form-group-sm row question-bloc has-feedback">
+						<label for="ecriture" class="question-titre control-label">Que penses-tu de la façon dont est écrite l'histoire ?</label>
 						<select id="ecriture" class="form-control select2-multiple" data-tooltips="Tu peux écrire ce que tu penses si il n'est pas dans la liste" data-toggle="tooltip" data-placement="right" multiple>
 							<option value="court">peu de pages</option>
 							<option value="aux nombreuses pages">beaucoup de pages</option>
@@ -260,10 +295,11 @@
 							<option value="bien écrit">bien écrite </option>
 							<option value="au style original">style original</option>
 						</select>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 					</div>
 
-					<div class="form-group form-group-sm row question-bloc">
-						<label for="recommandation" class="question-titre">Recommanderais-tu ce livre ?</label>
+					<div class="form-group form-group-sm row question-bloc has-feedback">
+						<label for="recommandation" class="question-titre control-label">Recommanderais-tu ce livre ?</label>
 						<select id="recommandation" class="form-control select2-single" data-tooltips="Tu peux écrire ta propre recommandation si elle n'est pas dans la liste" data-toggle="tooltip">
 							<option label="vide"></option>
 							<option value="est un chef d'oeuvre !">un chef d'oeuvre ! </option>
@@ -277,11 +313,12 @@
 							<option value="est à laisser sur l'étagère.">à laisser sur l'étagère.</option>
 							<option value="est sans intérêt.">sans intérêt.</option>
 							<option value="tombe des mains.">tombe des mains.</option>
-						</select>	
+						</select>
+						<span class="glyphicon form-control-feedback" aria-hidden="true"></span>	
 					</div>
 
 
-					<div class="form-group form-group-sm row question-bloc">	
+					<div class="form-group form-group-sm row question-bloc has-feedback">	
 						<button type="button" id="generer" class="btn btn-success" value="Générer la critique" aria-label="Left Align">
 							<span aria-hidden="true"><i class="fa fa-check"></i> Générer la critique</span>
 						</button>
@@ -291,11 +328,11 @@
 						</button>
 					</div>
 				</div>
-			</div>		
+			<!-- </div>		 -->
 
 			<div id="personnalisation" class="container-fluid chapitre">
 				<h2>III - Personnalisation</h2>
-				<div class="form-group form-group-sm row question-bloc">	
+				<div class="form-group form-group-sm row question-bloc has-feedback">	
 					<div class="alert alert-info" role="alert">
 						<h4 class="alert-heading"><i class="fa fa-exclamation-triangle fa-lg fa-fw"></i> Avant de copier la critique :</h4>
 						<ul>
@@ -384,7 +421,6 @@
 			"Ce livre "+ecriture+" "+recommandation
 		);
 		//$('#critique').val(`${titre} écrit par ${auteur} est ${type} ${genre} qui parle ${theme} ${resume} L'histoire est ${emotion} ${ressenti}${avis} lire ce livre, car j'ai trouvé l'histoire ${qualificatif} Ce livre ${ecriture} ${recommandation}`);
-		$('html,body, window.parent.document').animate({scrollTop: $("#personnalisation").offset().top}, 'slow'); // défile jusqu'à la critique généré
 	}
 
 	/** Remise à zéro du formulaire **/
@@ -405,6 +441,13 @@
 	    }
 
 	    $('#ressenti').val("car ");                          // remet le "car " dans la zone de texte
+	    
+	    $('.form-group').removeClass('has-success'); 		 // enlève le vert  / retour au gris
+	    $('.form-group').removeClass('has-error'); 		 	 // enlève le rouge / retour au gris
+	    $('.form-group').removeClass('tremblement'); 		 // enlève le "tremblement si vide"
+	    $('span').removeClass('glyphicon-ok'); 		 		 // enlève le symbole check
+	    $('span').removeClass('glyphicon-remove'); 		     // enlève le symbole croix
+
 	    $('html,body').animate({scrollTop: $("#presentation").offset().top}, 'slow'); // défile jusqu'au début de la page
 	}
 
@@ -415,41 +458,13 @@
 	    $("#copy-alert").fadeIn(200); // affiche l'alerte "texte copié"
 	}
 
-
-	/** Réaction des boutons **/
-	$("#generer").click(function() {		   // bouton "générer la critique"
-		myCritic();
-	});
-
-	$("#reset").click(function() {			   // bouton "rétablir les valeurs par défaut"
-		var confirmation = confirm("Es-tu sûr de vouloir réinitialiser ce formulaire ?");
-		if (confirmation) {
-			raz();
-		}
-	});
-
-	$("#copy").click(function() {			   // bouton "copier le texte"
-		copy();
-	});
-
-	$('#copy-close').click(function() { 	   // croix ferme l'alerte "texte copié""
-		$("#copy-alert").hide(); 
-	});
-
-
-	$('#emotions li').on('click', function(){  // emoji en couleur
-		$(this).parent().children('li.emotion').removeClass('selected');
-		$(this).addClass('selected');
-	});
-
-
 	/** Initialisation des éléments **/
 	$(document).ready(function() {
 		// cache l'alerte texte copié
 		$("#copy-alert").hide();
 
 		// initialise liste de sélection simple
-		$('.select2-single').select2({
+		$('.select2-single').select2( {
 			language: "fr",
 			theme: 'bootstrap',
 			tags: true,
@@ -457,16 +472,16 @@
 		});
 
 		// initialise liste de sélection multiple
-		$('.select2-multiple').select2({
+		$('.select2-multiple').select2( {
 			language: "fr",
 			theme: 'bootstrap',
 			tags: true,
-			allowClear: true,
+			//allowClear: true,
 			placeholder: 'Choisis une ou plusieurs options'
 		});
 
 		// ajout des infobulles pour les listes de sélections
-		$(".select2-container").tooltip({
+		$(".select2-container").tooltip( {
 			title: function() {
 				return $(this).prev().attr("data-tooltips");
 			},
@@ -475,6 +490,112 @@
 
 		// active les autres infobulles
 		$('[data-toggle="tooltip"]').tooltip()
+	});
+
+	/** Réaction des boutons **/
+	// bouton "générer la critique"
+	$("#generer").click(function() {		   
+		var emptyField = false; // passe à vrai si un champs n'est pas complet
+
+		// on contrôle si une zone de saisie est vide
+		$("#titre, #auteur, #resume, #ressenti, .select2-single").each(function() {
+			if($(this).val() == ""){										   // si c'est vide
+				$(this).parent().addClass("tremblement");						  // shake shake shake
+				$(this).parent().addClass("has-error"); 						  // on la passe en rouge
+				$(this).parent().find(".glyphicon").addClass("glyphicon-remove"); // on ajoute le symbole croix
+				emptyField = true;
+				console.log($(this));
+				
+		    }
+		});
+
+		// on controle les liste de choix multiple
+		$(".select2-multiple").each(function() {
+			if ($(this).val().length == 0) { 								// si aucun choix
+				$(this).parent().addClass("tremblement");						  // shake shake shake
+				$(this).parent().addClass("has-error"); 						  // on la passe en rouge
+				$(this).parent().find(".glyphicon").addClass("glyphicon-remove"); // on ajoute le symbole croix
+				emptyField = true;
+			    console.log($(this));
+			}
+		});
+
+		// on contrôle aussi les emojis et les étoiles
+		$(".rating-emotions, .rating-stars").each(function(){
+			if(!$(this).find("li.selected").data("val")){					  // si rien n'est sélectionné 
+				$(this).parent().addClass("tremblement"); 						  // shake shake shake
+				$(this).parent().addClass("has-error"); 						  // on la passe en rouge
+				$(this).parent().find(".glyphicon").addClass("glyphicon-remove"); // on ajoute le symbole croix
+				emptyField = true;
+			    console.log($(this));
+			}
+			
+		})
+
+		// si il n'y a pas de zone non saisie on génère la critique
+		if (!emptyField) {	// si la variable n'est pas à vrai c'est que tout les contrôles sont bon
+			myCritic();
+			$('html,body, window.parent.document').animate({scrollTop: $("#personnalisation").offset().top}, 'slow'); // défile jusqu'à la critique généré
+		} else {
+			$('html,body').animate({scrollTop: $("#presentation").offset().top}, 'slow'); 						      // défile jusqu'au début de la page
+		}
+
+	});
+
+	// bouton "rétablir les valeurs par défaut"
+	$("#reset").click(function() {
+		var confirmation = confirm("Es-tu sûr de vouloir réinitialiser ce formulaire ?");
+		if (confirmation) {
+			raz();
+		}
+	});
+
+	// bouton "copier le texte"
+	$("#copy").click(function() {
+		copy();
+	});
+
+	// croix ferme l'alerte "texte copié"
+	$('#copy-close').click(function() { 	   
+		$("#copy-alert").hide(); 
+	});
+
+
+	// saisie dans la zone de texte
+	$(".form-group").on("keypress",":input",function() {
+		$(this).parent().removeClass("has-error"); 					   // enlève le message d'erreur
+		$(this).parent().find("span").removeClass("glyphicon-remove"); // enlève le symbole croix
+	});
+
+	// perte de focus sur la zone de texte
+	$(".form-group").on("focusout","input, textarea",function() {
+		//si la zone de texte est vide
+		$(this).parent().addClass("has-success");
+		if ($(this).val() == "" ) { 
+			$(this).parent().removeClass("has-success"); 			   // on fait redevenir la zone de texte à son etat initial (gris)
+			$(this).parent().find("span").removeClass("glyphicon-ok"); // enlève le symbole check
+		} else { 													   // sinon l'utilsateur à écrit quelque chose
+			$(this).parent().addClass("has-success"); 				   	  // on passe la zone de texte en vert
+			$(this).parent().find("span").addClass("glyphicon-ok"); 	  // on ajoute le symbole check
+		}
+	});
+
+	// liste de sélection
+	$('.select2-single, .select2-multiple').on('select2:select', function (e) {
+	  	$(this).parent().removeClass("has-error");								// enlève le rouge
+	  	$(this).parent().addClass("has-success");								// rajoute le vert
+	  	$(this).parent().find(".glyphicon").removeClass("glyphicon-remove"); 	// enlève le symbole croix
+	  	$(this).parent().find(".glyphicon").addClass("glyphicon-ok");			// rajoute le symbole check
+	});
+
+	// clique sur emoji et  sur les étoiles
+	$('#emotions li, #stars li').on('click', function(){  
+		$(this).parent().children('li.emotion').removeClass('selected'); 				 // enleve la class selected sur tous les emojis
+		$(this).addClass('selected'); 													 // grossi l'emoji/l'étoile sélectionné
+		$(this).parent().parent().parent().addClass('has-success'); 					 // passe le label en vert
+		$(this).parent().parent().parent().removeClass('has-error'); 					 // enlève l'erreur
+		$(this).parent().parent().parent().find("span").addClass('glyphicon-ok');   	 // ajoute le symbole check
+		$(this).parent().parent().parent().find("span").removeClass('glyphicon-remove'); // enlève le symbole croix
 	});
 
 
@@ -514,7 +635,10 @@
 	    
 	    for (i = 0; i < onStar; i++) {
 	    	$(stars[i]).addClass('selected');
-	    }	    
+	    }
+
+	    $(this).parent().parent().parent().addClass('has-success'); 	 // passe le label en vert
+		$(this).parent().parent().find("span").addClass('glyphicon-ok'); // ajoute le symbole check	    
 	});
 });
 

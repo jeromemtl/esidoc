@@ -1,139 +1,559 @@
-<script type="text/javascript">
-function copieChoix()
- {
- var separ = ", ";
- var separ2 = ". ";
- var separ3 = "p. ";
- var separ4 = "n° ";
- var separ5 = " Consulté le : ";
- var separ6 = "Disponible sur : ";
- var separ7 = " [En ligne]";
- var separ8 = "\"";
-var separ9 = " p.";
- if (document.form.livre.checked == true) {
- document.getElementById("result16").focus();
- var concat = document.getElementById("result").value.toUpperCase() + separ + document.getElementById("result2").value + separ2 + document.getElementById("result3").value.italics() + separ2 + document.getElementById("result6").value + separ + document.getElementById("result9").value + separ2 + document.getElementById("result12").value + separ9;
- document.getElementById("result16").value = concat;
- }
- if (document.form.chapitre.checked == true) {
- document.getElementById("result16").focus();
- var concat = document.getElementById("result").value.toUpperCase() + separ + document.getElementById("result2").value + separ2 + document.getElementById("result3").value.italics() + separ2 + document.getElementById("result6").value + separ + document.getElementById("result9").value + separ2 + document.getElementById("result7").value + separ + separ3 + document.getElementById("result13").value;
- document.getElementById("result16").value = concat;
- }
- if (document.form.article.checked == true) {
- document.getElementById("result16").focus();
- var concat = document.getElementById("result").value.toUpperCase() + separ + document.getElementById("result2").value + separ2 + separ8 + document.getElementById("result8").value + separ8 + separ2 + document.getElementById("result4").value.italics() + separ + separ4 + document.getElementById("result11").value + separ + document.getElementById("result9").value + separ2 + separ3 + document.getElementById("result13").value;
- document.getElementById("result16").value = concat;
- }
- if (document.form.web.checked == true) {
- document.getElementById("result16").focus();
- var concat = document.getElementById("result").value.toUpperCase() + separ + document.getElementById("result2").value + separ2 + separ8 + document.getElementById("result15").value + separ8 + separ2 + document.getElementById("result5").value.italics() + separ7 + separ + document.getElementById("result9").value + separ2 + separ5 + document.getElementById("result10").value + separ2 + separ6 + document.getElementById("result14").value;
- document.getElementById("result16").value = concat;
- }
- if ((document.form.livre.checked == false)&&(document.form.chapitre.checked == false)&&(document.form.article.checked == false)&&(document.form.web.checked == false)) {
- alert("Choississez un type de document !");
- return false
- }
- }
-</script>
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+	<meta charset="utf-8">
+	<title>Générateur de bibliographie</title>
 
-<form name="form"><br /><b>1 - Choisissez le type de document &agrave; citer.</b><br />  <br /><input name="typedoc" type="radio" value="Livre" onclick="
- if (this.checked) {
- this.form.result3.style.display='inline';
- this.form.result4.style.display='none';
- this.form.result5.style.display='none';
- this.form.result6.style.display='inline'; 
-this.form.result7.style.display='none';
- this.form.result8.style.display='none';
- this.form.result9.style.display='inline';
- this.form.result10.style.display='none';
- this.form.result11.style.display='none';
- this.form.result12.style.display='inline';
- this.form.result13.style.display='none';
- this.form.result14.style.display='none';
- this.form.result15.style.display='none';
- }
- return true;" id="livre" />Livre <input name="typedoc" type="radio" value="Chapitre" onclick="
- if (this.checked) {
- this.form.result3.style.display='inline';
- this.form.result4.style.display='none';
- this.form.result5.style.display='none';
- this.form.result6.style.display='inline'; 
-this.form.result7.style.display='inline';
- this.form.result8.style.display='none';
- this.form.result9.style.display='inline';
- this.form.result10.style.display='none';
- this.form.result11.style.display='none';
- this.form.result12.style.display='none';
- this.form.result13.style.display='inline';
- this.form.result14.style.display='none';
- this.form.result15.style.display='none';
- }
- return true;" id="chapitre" />Chapitre <input name="typedoc" type="radio" value="Article" onclick="
- if (this.checked) {
- this.form.result3.style.display='none';
- this.form.result4.style.display='inline';
- this.form.result5.style.display='none';
- this.form.result6.style.display='none';
- this.form.result7.style.display='none';
- this.form.result8.style.display='inline';
- this.form.result9.style.display='inline';
- this.form.result10.style.display='none';
- this.form.result11.style.display='inline';
- this.form.result12.style.display='none';
- this.form.result13.style.display='inline';
- this.form.result14.style.display='none';
- this.form.result15.style.display='none';
- }
- return true;" id="article" />Article de p&eacute;riodique (journaux, revues) <input name="typedoc" type="radio" value="Web" onclick="
- if (this.checked) {
- this.form.result3.style.display='none';
- this.form.result4.style.display='none';
- this.form.result5.style.display='inline';
- this.form.result6.style.display='none';
- this.form.result7.style.display='none';
- this.form.result8.style.display='none';
- this.form.result9.style.display='inline';
- this.form.result10.style.display='inline';
- this.form.result11.style.display='none';
- this.form.result12.style.display='none';
- this.form.result13.style.display='none';
- this.form.result14.style.display='inline';
- this.form.result15.style.display='inline';
- }
- return true;" id="web" />Page internet <br /><br /><b>2 - Remplissez les champs suivants :</b><br />(Passez la souris sur les champs pour avoir plus d'informations)<br /><br />
-<table style="border-collapse: collapse; width: 450px; height: 80px;">
-<tbody>
-<tr>
-<td style="padding-top:5px;"><input size="18" value="NOM de l'auteur" title="Vide si l'auteur est anonyme." id="result" /></td>
-<td style="padding-top:5px;"><input size="18" value="Pr&eacute;nom de l'auteur" title="Vide si l'auteur est anonyme." id="result2" /></td>
-<td style="padding-top:5px;"><input size="18" value="Titre du livre" id="result3" /></td>
-</tr>
-<tr>
-<td style="padding-top:5px;"><input size="18" value="Titre du p&eacute;riodique" title="Par exemple Science &amp; vie junior, Wapiti..." id="result4" /></td>
-<td style="padding-top:5px;"><input size="18" value="Nom du site web" id="result5" /></td>
-<td style="padding-top:5px;"><input size="18" value="&Eacute;diteur" title="Se trouve sur la couverture ou dans les premi&egrave;res pages du livre." id="result6" /></td>
-</tr>
-<tr>
-<td style="padding-top:5px;"><input size="18" value="Titre du chapitre" id="result7" /></td>
-<td style="padding-top:5px;"><input size="18" value="Titre de l'article" id="result8" /></td>
-<td style="padding-top:5px;"><input size="18" value="Date de publication" title="Se trouve dans les premi&egrave;res ou derni&egrave;res pages du livre, sous la mention 'D&eacute;p&ocirc;t l&eacute;gal'." id="result9" /></td>
-</tr>
-<tr>
-<td style="padding-top:5px;"><input size="18" value="Date de consultation" title="Date exacte du jour comme '16/12/2012'." id="result10" /></td>
-<td style="padding-top:5px;"><input size="18" value="Num&eacute;ro" id="result11" /></td>
-<td style="padding-top:5px;"><input size="18" value="Nombre total de pages" title="Inscrire le dernier num&eacute;ro de page imprim&eacute;." id="result12" /></td>
-</tr>
-<tr>
-<td style="padding-top:5px;"><input size="18" value="Pagination" title="Premi&egrave;re page et derni&egrave;re page de l'article ou du chapitre, comme '12-23'." id="result13" /></td>
-<td style="padding-top:5px;"><input size="18" value="Adresse URL" title="De type 'http://www.exemple.fr/page45.html'." id="result14" /></td>
-<td style="padding-top:5px;"><input size="18" value="Titre de la page web" title="Titre de la page &agrave; l'int&eacute;rieur du site web." id="result15" /></td>
-</tr>
-</tbody>
-</table>
-<br /><br /><input type="button" value="G&eacute;n&eacute;rer" onclick="copieChoix()" />    <input type="button" value="R&eacute;tablir les valeurs par d&eacute;faut" onclick="this.form.reset();" /> <br /><br />
-<b>3 - Copiez-collez la r&eacute;f&eacute;rence bibliographique suivante :</b><br /><br /><textarea readonly="readonly" cols="50" rows="5" id="result16"></textarea> </form><br />
-N'oubliez pas de <b>mettre en forme le titre</b> (situ&eacute; entre les balises &lt;i&gt; et &lt;/i&gt;) :<br />
-- le <u>souligner</u>, pour une bibliographie &eacute;crite &agrave; la main<br />
-- le mettre en <i>italique</i>, pour une bibliographie &agrave; l'ordinateur<br />
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/libs/twitter-bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/libs/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="https://frontend.esidoc.fr/css/all.min.css" type="text/css">
+	
+	<style>
+		.doc-label {
+			display: block;
+		}
+
+		.doc-label:hover {
+			transition: all 200ms ease-in;
+    		transform: scale(1.5);
+		}
+
+		.doc-emoji{
+			font-size: 2em;
+			display: block;
+		}
+
+		.selected {
+			transform: scale(1.5);
+			color: #5cb85c;
+		}
+		
+		.doc-texte{
+			line-height: 1em;
+		}
+
+		.doc-type{
+			display: none;
+		}
+
+		.liste-radio{
+			padding-top: 1em;
+		}
+
+		.mes-champs {
+			margin-bottom: 1.5em;
+		}
+		.alert {
+			margin-top: 1.5em;
+		}
+		.alert li {
+			margin-left: 5em;
+		}
+		.alert-heading {
+			margin-bottom: 0.1em;
+		}
+
+		.apparition {
+		    animation: expanse 0.8s ease;
+		}
+
+		.tremblement{
+			animation: shake 1s ease;
+		}
+
+		@keyframes fadeIn {
+		    from {
+		        opacity: 0;
+		    }
+		    to {
+		        opacity: 1;
+		    }
+		}
+
+		@keyframes expanse {
+		    0% {
+		        opacity: 0;
+		        transform: scaleY(0);
+		    }
+		    100% {
+		        opacity: 1;
+		        transform: scaleY(1);
+		    }
+		}
+
+		@keyframes shake {
+		  10%, 90% {
+		    transform: translate3d(-1px, 0, 0);
+		  }
+		  
+		  20%, 80% {
+		    transform: translate3d(2px, 0, 0);
+		  }
+
+		  30%, 50%, 70% {
+		    transform: translate3d(-4px, 0, 0);
+		  }
+
+		  40%, 60% {
+		    transform: translate3d(4px, 0, 0);
+		  }
+		}
+	</style>
+
+</head>
+
+<body>
+	<article>
+		<form id="generateur-biblio">
+			<div id="choisir-doc-type" class="container-fluid chapitre">
+				<h2 class="title">1 - Choisissez le type de document à citer</h2>
+
+				<div class="row liste-radio">
+					<div class="col-md-3">
+						<label class="text-center doc-label">
+							<input type="radio" name="doc-type" class="doc-type" value="Livre" checked>
+							<span class="doc-emoji">📕</span>
+							<span class="doc-texte">Livre</span>
+						</label>
+					</div>
+					<div class="col-md-3">
+						<label class="text-center doc-label">
+							<input type="radio" name="doc-type" class="doc-type" value="Chapitre">
+							<span class="doc-emoji">🔖</span>
+							<span class="doc-texte">Chapitre</span>
+						</label>
+					</div>
+					<div class="col-md-3">
+						<label class="text-center doc-label">
+							<input type="radio" name="doc-type" class="doc-type" value="Periodique">
+							<span class="doc-emoji">📰</span>
+							<span class="doc-texte">Article de périodique<br>(journaux, revues)</span>
+						</label>
+					</div>
+					<div class="col-md-3">
+						<label class="text-center doc-label">
+							<input type="radio" name="doc-type" class="doc-type" value="Web">
+							<span class="doc-emoji">🖥️</span>
+							<span class="doc-texte">Page internet</span>
+						</label>
+					</div>
+				</div>
+			</div>
+
+			<div id="remplir-champ" class="container-fluid chapitre">
+				<h2 class="title">2 - Remplissez les champs suivants <small>(Passez la souris sur les champs pour avoir plus d'informations)</small></h2>
+				
+				<!-- Les champs de saisie vont apparaître ici -->
+				<div id="liste-input"></div>
+
+					<div class="row">
+						<button type="button" id="generer" class="btn btn-success" value="Générer la bibliographie" aria-label="Left Align">
+							<span aria-hidden="true"><i class="fa fa-check"></i> Générer la bibliographie</span>
+						</button>
+
+						<button type="button" id="reset" class="btn btn-primary" value="Rétablir les valeurs par defaut" aria-label="Left Align">
+							<span aria-hidden="true"><i class="fa fa-undo"></i> Rétablir les valeurs par defaut</span>
+						</button>
+					</div>
+				</div>
+				
+			
+
+			<div id="presentation" class="container-fluid chapitre">
+				<h2 class="title">3 - Copiez-collez la référence bibliographique suivante</h2>
+				<textarea rows="3" id="bibliographie" class="form-control" readonly></textarea>
+				<div class="alert alert-info" role="alert">
+					<p class="alert-heading"><i class="fa fa-exclamation-triangle fa-lg fa-fw"></i> N'oubliez pas de <b>mettre en forme le titre</b> (situ&eacute; entre les balises &lt;i&gt; et &lt;/i&gt;) :</p>
+					<ul>
+						<li>le <u>souligner</u>, pour une bibliographie &eacute;crite &agrave; la main</li>
+						<li>le mettre en <i>italique</i>, pour une bibliographie &agrave; l'ordinateur</li>
+					</ul>
+				</div>
+		
+				<div id="copy-alert" class="alert alert-success alert-dismissible" role="alert">
+					<button id="copy-close" type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+					Texte copié !
+				</div>
+
+				<button type="button" id="copy" class="btn btn-default citation-copy">
+					<i class="fa fa-copy" aria-hidden="true"></i> Copier le texte
+				</button>
+			</div>
+		</form>
+	</article>
+
+	<script src="https://frontend.esidoc.fr/libs/jquery/jquery.min.js?ver=1583172060000"></script>
+	<script src="https://frontend.esidoc.fr/libs/twitter-bootstrap/js/bootstrap.min.js?ver=acbc186d"></script>
+	<script>
+		
+		/**  Variables globales pour les zones de texte  **/
+		var nomAuteur = {
+		  "type": "text",
+		  "id": "nom-auteur",
+		  "placeholder": "Nom de l'auteur",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Laisser vide si l'auteur est anonyme",
+		  "data-toggle": "tooltip"
+		};
+
+		var prenomAuteur = {
+		  "type": "text",
+		  "id": "prenom-auteur",
+		  "placeholder": "Prénom de l'auteur",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Laisser vide si l'auteur est anonyme",
+		  "data-toggle": "tooltip"
+		};
+
+		var titreLive = {
+		  "type": "text",
+		  "id": "titre-livre",
+		  "placeholder": "Titre du livre",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var titrePeriodique = {
+		  "type": "text",
+		  "id": "titre-periodique",
+		  "placeholder": "Titre du périodique",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var nomWeb = {
+		  "type": "text",
+		  "id": "nom-web",
+		  "placeholder": "Nom du site Web",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var Editeur = {
+		  "type": "text",
+		  "id": "editeur",
+		  "placeholder": "Éditeur",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Se trouve sur la couverture ou dans les premières pages du livre",
+		  "data-toggle": "tooltip"
+		};
+
+		var titreChapitre = {
+		  "type": "text",
+		  "id": "titre-chapitre",
+		  "placeholder": "Titre du chapitre",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var titreArticle = {
+		  "type": "text",
+		  "id": "titre-article",
+		  "placeholder": "Titre de l'article",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var datePublication = {
+		  "type": "date",
+		  "id": "date-publication",
+		  "placeholder": "Date de publication",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Se trouve dans les premières ou dernières pages du livre, sous la mention 'Dépôt légal'",
+		  "data-toggle": "tooltip"
+		};
+
+		var dateConsultation = {
+		  "type": "date",
+		  "id": "date-consultation",
+		  "placeholder": "Date de consultation",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var NbPabe = {
+		  "type": "number",
+		  "id": "nb-page",
+		  "placeholder": "Nombre total de pages",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Inscrire le dernier numéro de page imprimé",
+		  "data-toggle": "tooltip"
+		};
+
+		var numero = {
+		  "type": "number",
+		  "id": "numero",
+		  "placeholder": "Numéro",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "",
+		  "data-toggle": "tooltip"
+		};
+
+		var pagination = {
+		  "type": "text",
+		  "id": "pagination",
+		  "placeholder": "Pagination",
+		  "pattern": "^[0-9]+-[0-9]+$", // fonctionne pas, c'est pas un vrai formulaire
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Première page et dernière page de l'article ou du chapitre, comme '12-23'",
+		  "data-toggle": "tooltip"
+		};
+
+		var url = {
+		  "type": "url",
+		  "id": "url",
+		  "placeholder": "Adresse URL",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Adresse du site",
+		  "data-toggle": "tooltip"
+		};
+
+		var titreWeb = {
+		  "type": "text",
+		  "id": "titre-web",
+		  "placeholder": "Titre de la page Web",
+		  "class": ["form-control", "mes-champs"],
+		  "title": "Titre de la page à l'intérieur du site web",
+		  "data-toggle": "tooltip"
+		};
+
+		var livre = [];
+		var chapitre = [];
+		var periodique = [];
+		var pageWeb = [];
+
+		// on ajoute chaque future zone de texte selon le type de document
+		livre.push(nomAuteur, prenomAuteur, titreLive, Editeur, datePublication, NbPabe);
+		chapitre.push(nomAuteur, prenomAuteur, titreLive, Editeur, datePublication, titreChapitre, pagination);
+		periodique.push(nomAuteur, prenomAuteur, titrePeriodique, titreArticle, datePublication, numero, pagination);
+		pageWeb.push(nomAuteur, prenomAuteur, nomWeb, titreWeb, datePublication, dateConsultation, url);
+
+		/** Génération d'un élément HTML **/
+		function createElement(type, attributes) {
+			var element = document.createElement(type);
+			
+			// on récupère tous les attributs de ma zone de texte
+			for (var key in attributes) {
+				if (key == "class") { // la class peut contenir plusieurs valeurs
+					attributes[key]=String(attributes[key]).replace(","," "); // c'est moche mais ça marche
+				}
+				element.setAttribute(key, attributes[key]);
+				
+			}
+
+			// création du conteneur pour la zone de saisie
+			div = document.createElement("div");
+			div.setAttribute("class", "row form-group-sm apparition has-feedback");
+
+			// création du label
+			label = document.createElement("label");
+			label.htmlFor = element['id'];
+			label.setAttribute("class", "control-label");
+			label.innerHTML = element['placeholder'];
+
+			//création de la zone de feedback dans la zone de texte
+			span = document.createElement("span");
+			span.setAttribute("class", "glyphicon form-control-feedback");
+			span.setAttribute("aria-hidden", "true");
+
+			//on affiche le tout
+			document.getElementById("liste-input").appendChild(div);
+			document.getElementById("liste-input").lastChild.appendChild(label);
+			document.getElementById("liste-input").lastChild.appendChild(element);
+			document.getElementById("liste-input").lastChild.appendChild(span);
+			
+			// on ajoute les infobulles
+			$('[data-toggle="tooltip"]').tooltip()
+		}
+
+		/** Génération d'une zone de texte **/
+		function createInput(selection){
+			document.getElementById("liste-input").innerHTML = "";
+			for (var key in selection) {
+				createElement("input", selection[key]);
+			}
+		}
+		
+		/** Ajoute la majuscule initiale **/
+		function addMajusculeInitiale(phrase) {
+			phrase = phrase.trim();											// supprime les espaces en trop en début et fin de phrase
+			phrase = phrase.charAt(0).toUpperCase() + phrase.slice(1);		// ajoute la majuscule initiale
+			return phrase;
+		}
+
+		function myBiblio(monChoix) {
+			var phrase;
+
+			/* variables communes au 4 cas */
+			var xnomAuteur = $('#nom-auteur').val().toUpperCase();
+			var xprenomAuteur = addMajusculeInitiale($('#prenom-auteur').val());
+
+			// selon le type de doc, on récupère la saisie et on crée la phrase
+			switch (monChoix) { 
+					case 'livre':
+						var xtitreLivre = addMajusculeInitiale($('#titre-livre').val());
+						var xediteur = addMajusculeInitiale($('#editeur').val());
+						var xdatePublication = $('#date-publication').val();
+						var xnbPage = $('#nb-page').val();
+						phrase = (`${xnomAuteur}, ${xprenomAuteur}. <i>${xtitreLivre}</i>. ${xediteur}, ${xdatePublication}. p${xnbPage}.`);
+						break;
+					case 'chapitre':
+						var xtitreLivre = addMajusculeInitiale($('#titre-livre').val());
+						var xediteur = addMajusculeInitiale($('#editeur').val());
+						var xdatePublication = $('#date-publication').val();
+						var xtitreChapitre = addMajusculeInitiale($('#titre-chapitre').val());
+						var xpagination = $('#pagination').val();
+						phrase = (`${xnomAuteur}, ${xprenomAuteur}. <i>${xtitreLivre}</i>. ${xediteur}, ${xdatePublication}. ${xtitreChapitre}, p${xpagination}.`);
+						break;
+					case 'periodique':
+						var xtitreArticle = addMajusculeInitiale($('#titre-article').val());
+						var xtitrePeriodique = addMajusculeInitiale($('#titre-periodique').val());
+						var xnumero = $('#numero').val();
+						var xpagination = $('#pagination').val();
+						phrase = (`${xnomAuteur}, ${xprenomAuteur}. "${xtitreArticle}". <i>${xtitrePeriodique}</i>, n° ${xnumero}, ${xdatePublication}. p${xpagination}.`);
+						break;
+					case 'pageWeb':
+						var xtitreWeb = $('#titre-web').val();
+						var xNomWeb = addMajusculeInitiale($('#nom-web').val());
+						var xdatePublication = $('#date-publication').val();
+						var xdateConsultation = $('#date-consultation').val();
+						var xurl = $('#url').val();
+						phrase = (`${xnomAuteur}, ${xprenomAuteur}. "${xtitreWeb}". <i>${xNomWeb}</i> [En ligne], ${xdatePublication}. Consulté le : ${xdateConsultation}. Disponible sur : ${xurl}`);
+						break;
+				}
+			return (phrase);
+		}
+
+		/** Copie la critique dans le presse-papier **/
+		function copy(){
+			document.querySelector("#bibliographie").select();
+			document.execCommand("copy");
+		    $("#copy-alert").fadeIn(200); // affiche l'alerte "texte copié"
+		}
+
+		/** Remise à zéro du formulaire **/
+		function raz(){
+			$("input[type='text']").val(null);                                 // reset les zones de saisie
+			$('textarea').val(null);                             			   // reset les zones de texte
+			$("input[name='doc-type']").filter('[value="Livre"]').click();     // on selectionne Livre
+		}
+		
+
+		/** Initialisation des éléments **/
+		$(document).ready(function() {
+			
+			// cache l'alerte texte copié
+			$("#copy-alert").hide();
+
+			// on attend 1/2 seconde pour cliquer sur Livre afin de montrer l'animation
+			setTimeout(
+				function() {
+					$("input[name='doc-type']").filter('[value="Livre"]').click();
+			}, 500);
+			
+		});
+
+		/** Réaction des boutons **/
+
+		// bouton radio "type de document"
+		$("input[name='doc-type']").on('click', function(){
+			$('.doc-label').removeClass('selected');
+			$(this).parent().addClass('selected');
+			switch ($(this).val()) {
+				case 'Livre':
+					createInput(livre);
+					break;
+				case 'Chapitre':
+					createInput(chapitre);
+					break;
+				case 'Periodique':
+					createInput(periodique);
+					break;
+				case 'Web':
+					createInput(pageWeb);
+					break;
+			}
+		
+		});
+
+		// bouton "générer la critique"
+		$("#generer").click(function() {		 
+			var emptyField = false; // passe à vrai si il y a une zone de texte non saisie
+			
+			// on contrôle si une zone de saisie est vide
+			$("input").each(function() {
+				if($(this).val() == ""){
+					$(this).parent().addClass("tremblement"); // shake shake shake
+					$(this).parent().addClass("has-error"); // on la passe en rouge
+					$(this).parent().find("span").addClass("glyphicon-remove"); // on ajoute le symbole croix
+					emptyField = true; 
+			    }
+			});
+
+			// si il n'y a pas de zone non saisie on génère la bibliographie
+			if (!emptyField) {														
+				switch ($("input[name='doc-type']:checked").val()) {
+				case 'Livre':
+					$('#bibliographie').val(myBiblio('livre'));
+					break;
+				case 'Chapitre':
+					$('#bibliographie').val(myBiblio('chapitre'));
+					break;
+				case 'Periodique':
+					$('#bibliographie').val(myBiblio('periodique'));
+					break;
+				case 'Web':
+					$('#bibliographie').val(myBiblio('pageWeb'));
+					break;
+				}
+			}
+		});
+
+		// bouton "rétablir les valeurs par défaut"
+		$("#reset").click(function() {			   
+			var confirmation = confirm("Es-tu sûr de vouloir réinitialiser ce formulaire ?");
+			if (confirmation) {
+				raz();
+			}
+		});
+
+		 // bouton "copier le texte"
+		$("#copy").click(function() {			  
+			copy();
+			console.log($("input"));
+		});
+
+		// croix ferme l'alerte "texte copié"
+		$('#copy-close').click(function() { 	   
+			$("#copy-alert").hide(); 
+		});
+
+		// saisie dans la zone de texte
+		$("#liste-input").on("keypress","input",function() {
+			//console.log($(this).parent().find("span"));
+			$(this).parent().removeClass("has-error"); // enlève le message d'erreur si la saisie est faite
+			$(this).parent().find("span").removeClass("glyphicon-remove"); // enlève le symbole croix
+		});
+
+		// perte de focus sur la zone de texte
+		$("#liste-input").on("focusout","input",function() {
+			//si la zone de texte est vide
+			if ($(this).val() == "" ) { 
+				$(this).parent().removeClass("has-success"); // on fait redevenir la zone de texte à son etat initial (gris)
+				$(this).parent().find("span").removeClass("glyphicon-ok"); // enlève le symbole check
+			} else { // sinon l'utilsateur à écrit quelque chose
+				$(this).parent().addClass("has-success"); // on passe la zone de texte en vert
+				$(this).parent().find("span").addClass("glyphicon-ok"); // on ajoute le symbole check
+			}
+		});
+	
+			
+	</script>
+</body>
