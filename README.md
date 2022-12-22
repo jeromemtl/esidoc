@@ -9,12 +9,15 @@ Finalement, je me suis laissé emporter...
 * Connectez vous en administrateur à e-sidoc en allant à l'URL [administration.esidoc.fr](https://administration.esidoc.fr/) ou en utilisant [ce userscript](https://github.com/jeromemtl/e-sidoc_userscript).
 * Allez dans le menu ["Menu et rubriques"](https://administration.esidoc.fr/portail/arborescence).
 * Créez un espace ou une rubrique.
-* Cliquez sur "Cadre de contenu incorporé" (symbole planète) dans le champs "Description".
-* Renseignez les champs suivants en fonction du générateur :
+* Cliquez sur le bouton "Source" dans le champ "Description".
+* Copiez et collez le code ci-dessous selon le générateur dans le champ "Description".
 
- | URL | Largeur |Hauteur
---- | --- | --- | ---
-**Bibliographie**  | https://jeromemtl.github.io/esidoc/bibliographie.html | 100% | 1150
-**Critique** | https://jeromemtl.github.io/esidoc/critique.html | 100% | 1820
+**Bibliographie**
+```
+<div style="padding-top:110%; position:relative"><iframe src="https://jeromemtl.github.io/esidoc/bibliographie.html" style="position:absolute;top:0;left:0;width: 100%;height: 100% !important;max-width: 100% !important;border:0;"></iframe></div>
+```
 
-* Vous connaissez la suite.
+**Critique**
+```
+<div style="padding-top:110%; position:relative"><iframe src="https://jeromemtl.github.io/esidoc/critique.html" style="position:absolute;top:0;left:0;width: 100%;height: 100% !important;max-width: 100% !important;border:0;"></iframe></div>
+```
